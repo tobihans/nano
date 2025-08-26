@@ -1,9 +1,11 @@
 [project]
 name = "nano"
 version = "0.1.0"
-description = "Add your description here"
+classifiers = ["Private :: Do Not Upload"]
+description = "A minimal django template"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "django>=5.2.5",
-]
+dependencies = ["django>=5.2.5", "pydantic-settings>=2.10.1"]
+
+[tool.pyrefly]
+python_interpreter = ".venv/bin/python"
