@@ -7,6 +7,8 @@ class Environ(BaseSettings):
 
     debug: bool = False
     secret_key: str = get_random_secret_key()
+    allowed_hosts: set[str] = set()
+
     language_code: str = "en-us"
 
 

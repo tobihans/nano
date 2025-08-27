@@ -25,7 +25,7 @@ DEBUG = env.debug
 
 SECRET_KEY = env.secret_key
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = list(env.allowed_hosts)
 
 
 # Application definition
