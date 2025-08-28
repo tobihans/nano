@@ -16,11 +16,12 @@
     <link rel="shortcut icon"
           type="image/x-icon"
           href="{% static 'favicon.ico' %}" />
+    <link rel="stylesheet" href="{% static 'app.css' %}">
   </head>
   <body>
     {# TODO: Upgrade base later #}
     {% block content %}
-      <p>Default content...</p>
+      <h1 class="text-4xl">Default content...</h1>
     {% endblock content %}
   </body>
 </html>
