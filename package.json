@@ -6,6 +6,12 @@
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.1.12",
+    "basecoat-css": "^0.3.2",
     "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "@iconify-json/tabler": "^1.2.22",
+    "@iconify/tailwind4": "^1.0.6",
+    "tw-animate-css": "^1.3.7"
   }
 }
