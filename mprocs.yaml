@@ -1,0 +1,32 @@
+procs:
+  tailwindcss:
+    autostart: true
+    autorestart: false
+    cmd:
+      - npm
+      - run
+      - tailwind:watch
+    stop:
+      send-keys:
+        - <C-c>
+  runserver:
+    autostart: true
+    autorestart: false
+    cmd:
+      - uv
+      - run
+      - ./manage.py
+      - runserver_plus
+    stop:
+      send-keys:
+        - <C-c>
+        #parcel:
+        #  autostart: true
+        #  autorestart: true
+        #  cmd:
+        #    - npx
+        #    - parcel
+        #    - watch
+        #  stop:
+        #    send-keys:
+        #      - <C-c>
