@@ -1,3 +1,0 @@
-python_interpreter = ".venv/bin/python"
-[errors]
-missing-attribute = "warn"
