@@ -1,4 +1,14 @@
 procs:
+  parcel:
+    autostart: true
+    autorestart: false
+    cmd:
+      - npm
+      - run
+      - parcel:watch
+    stop:
+      send-keys:
+        - <C-c>
   tailwindcss:
     autostart: true
     autorestart: false
@@ -20,13 +30,3 @@ procs:
     stop:
       send-keys:
         - <C-c>
-        #parcel:
-        #  autostart: true
-        #  autorestart: true
-        #  cmd:
-        #    - npx
-        #    - parcel
-        #    - watch
-        #  stop:
-        #    send-keys:
-        #      - <C-c>
