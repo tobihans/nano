@@ -16,12 +16,19 @@
     <link rel="shortcut icon"
           type="image/x-icon"
           href="{% static 'favicon.ico' %}" />
-    <link rel="stylesheet" href="{% static 'app.css' %}">
+
+    {% block styles %}
+      <link rel="stylesheet" href="{% static 'app.css' %}">
+    {% endblock styles %}
   </head>
   <body>
     {# TODO: Upgrade base later #}
     {% block content %}
       <h1 class="text-4xl">Default content...</h1>
     {% endblock content %}
+
+    {% block scripts %}
+      <script type="module" src="{% static 'app.js' %}"></script>
+    {% endblock scripts %}
   </body>
 </html>
