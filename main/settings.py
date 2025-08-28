@@ -25,8 +25,8 @@ DEBUG = env.debug
 
 SECRET_KEY = env.secret_key
 
-ALLOWED_HOSTS = env.allowed_hosts
-INTERNAL_IPS = env.internal_ips
+ALLOWED_HOSTS = list(env.allowed_hosts)
+INTERNAL_IPS = list(env.internal_ips)
 
 
 # Application definition
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "allauth",
     "allauth.account",
     "debug_toolbar",
+    "django_extensions",
     # 1st party apps
     "apps.accounts",
 ]

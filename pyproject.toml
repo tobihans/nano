@@ -9,10 +9,9 @@ dependencies = [
     "django>=5.2.5",
     "django-allauth[socialaccount]>=65.11.1",
     "django-debug-toolbar>=6.0.0",
+    "django-extensions>=4.1",
     "pydantic-settings>=2.10.1",
 ]
 
-[tool.pyrefly]
-python_interpreter = ".venv/bin/python"
-[tool.pyrefly.errors]
-missing-attribute = "warn"
+[dependency-groups]
+dev = ["werkzeug>=3.1.3"]
