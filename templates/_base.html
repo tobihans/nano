@@ -1,4 +1,4 @@
-{% load static %}
+{% load i18n static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,8 +7,8 @@
     <meta name="viewport"
           content="width=device-width, minimum-scale=1, initial-scale=1" />
     <title>
-      {% block title %}
-      {% endblock title %}
+      {% block head_title %}
+      {% endblock head_title %}
     </title>
     <meta name="description"
           content="A framework for launching new Django projects quickly." />
@@ -17,9 +17,9 @@
           type="image/x-icon"
           href="{% static 'favicon.ico' %}" />
 
-    {% block styles %}
-      <link rel="stylesheet" href="{% static 'app.css' %}">
-    {% endblock styles %}
+    <link rel="stylesheet" href="{% static 'app.css' %}">
+    {% block extra_head %}
+    {% endblock extra_head %}
     <script>
       (() => {
         try {
@@ -45,13 +45,16 @@
     </script>
   </head>
   <body>
-    {# TODO: Upgrade base later #}
-    {% block content %}
-      <h1 class="text-4xl">Default content...</h1>
-    {% endblock content %}
+    {% block body %}
 
-    {% block scripts %}
-      <script type="module" src="{% static 'app.js' %}"></script>
-    {% endblock scripts %}
+      {# TODO: Upgrade base later #}
+      {% block content %}
+        <h1 class="text-4xl">Default content...</h1>
+      {% endblock content %}
+
+    {% endblock body %}
+    <script type="module" src="{% static 'app.js' %}"></script>
+    {% block extra_body %}
+    {% endblock extra_body %}
   </body>
 </html>
