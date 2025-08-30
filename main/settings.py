@@ -30,6 +30,10 @@ INTERNAL_IPS = list(env.internal_ips)
 
 
 # Application definition
+DEV_TOOLS = [
+    "debug_toolbar",
+    "django_browser_reload",
+]
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -40,18 +44,22 @@ INSTALLED_APPS = [
     # 3rd party apps
     "allauth",
     "allauth.account",
-    "debug_toolbar",
     "django_extensions",
+    *(DEV_TOOLS if DEBUG else []),
     # 1st party apps
     "apps.accounts",
     "apps.pages",
 ]
 
+DEV_MIDDLEWARE = [
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "django_browser_reload.middleware.BrowserReloadMiddleware",
+]
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    *(DEV_MIDDLEWARE if DEBUG else []),
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
