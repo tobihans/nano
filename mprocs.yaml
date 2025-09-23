@@ -1,4 +1,16 @@
 procs:
+  deps:compose:
+    autostart: true
+    autorestart: false
+    cmd:
+      - docker
+      - compose
+      - -f
+      - docker-compose.dev.yml
+      - up
+    stop:
+      send-keys:
+        - <C-c>
   parcel:
     autostart: true
     autorestart: false

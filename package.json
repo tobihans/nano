@@ -11,7 +11,7 @@
     "@tailwindcss/cli": "^4.1.12",
     "alpinejs": "^3.14.9",
     "basecoat-css": "^0.3.2",
-    "tailwindcss": "^4.1.12"
+    "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@iconify-json/tabler": "^1.2.22",
