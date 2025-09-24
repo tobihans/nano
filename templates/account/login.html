@@ -40,11 +40,11 @@
               {% trans "Remember me" %}
             </label>
           </div>
-          <button type="submit" class="btn w-full">{% trans "Login" %}</button>
+          <c-button type="submit" class="w-full">{% trans "Login" %}</c-button>
         </form>
       </section>
       <footer class="flex flex-col items-center gap-2">
-        <button type="button" class="btn-outline w-full">{% trans "Login with Google" %}</button>
+        <c-button class="w-full" variant="outline" type="submit">{% trans "Login with Google" %}</c-button>
         <p class="mt-4 text-center text-sm">
           {% trans "Don't have an account?" %} <a href="{{ signup_url }}" class="underline-offset-4 hover:underline">{% trans "Sign up" %}</a>
         </p>

@@ -1,0 +1,4 @@
+<c-vars variant="" size="" />
+<button class="{% if variant and size %}{{ 'btn-'|add:size|add:'-'|add:variant }}{% elif variant %}{{ 'btn-'|add:variant }}{% elif size %}{{ 'btn-'|add:size }}{% else %}btn{% endif %} {{ class }}">
+  {{ slot }}
+</button>

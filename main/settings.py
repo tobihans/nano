@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     # 3rd party apps
     "allauth",
     "allauth.account",
+    "django_cotton",
     "django_extensions",
     *(DEV_TOOLS if DEBUG else []),
     # 1st party apps
