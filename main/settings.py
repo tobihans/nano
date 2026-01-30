@@ -49,8 +49,8 @@ INSTALLED_APPS = [
     "django_extensions",
     *(DEV_TOOLS if DEBUG else []),
     # 1st party apps
-    "apps.accounts",
     "apps.pages",
+    "apps.users",
 ]
 
 DEV_MIDDLEWARE = [
@@ -111,7 +111,7 @@ DATABASES = {
 }
 
 
-AUTH_USER_MODEL = "accounts.User"
+AUTH_USER_MODEL = "users.User"
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
