@@ -3,8 +3,8 @@
   "scripts": {
     "tailwind:build": "npx @tailwindcss/cli -i ui/app.css -o ui/dist/app.css --minify",
     "tailwind:watch": "npx @tailwindcss/cli -i ui/app.css -o ui/dist/app.css --watch --minify",
-    "parcel:build": "npx parcel build",
-    "parcel:watch": "npx parcel watch"
+    "esbuild:build": "node esbuild.config.mjs",
+    "esbuild:watch": "node esbuild.config.mjs --watch"
   },
   "dependencies": {
     "@imacrayon/alpine-ajax": "^0.12.4",
@@ -18,25 +18,8 @@
     "@iconify/tailwind4": "^1.0.6",
     "@types/alpinejs": "^3.13.11",
     "@types/node": "^24.5.2",
-    "parcel": "^2.16.0",
+    "esbuild": "^0.27.1",
     "tw-animate-css": "^1.3.7",
     "typescript": "^5.9.2"
-  },
-  "targets": {
-    "default": {
-      "context": "browser",
-      "source": "ui/app.ts",
-      "distDir": "ui/dist",
-      "includeNodeModules": true,
-      "sourceMap": false,
-      "outputFormat": "esmodule",
-      "isLibrary": false,
-      "engines": {
-        "browsers": "defaults"
-      }
-    }
-  },
-  "@parcel/resolver-default": {
-    "packageExports": true
   }
 }

@@ -25,13 +25,13 @@ procs:
   #   stop:
   #     send-keys:
   #       - <C-c>
-  parcel:
+  esbuild:
     autostart: true
     autorestart: false
     cmd:
       - npm
       - run
-      - parcel:watch
+      - esbuild:watch
     stop:
       send-keys:
         - <C-c>
