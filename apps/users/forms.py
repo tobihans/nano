@@ -51,3 +51,7 @@ class LoginForm(forms.Form):
 
     def get_user(self):
         return self.user
+
+
+class PasswordResetRequestForm(forms.Form):
+    email = forms.EmailField(widget=forms.EmailInput(attrs={"autofocus": True}))

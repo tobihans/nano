@@ -1,21 +1,21 @@
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import login, logout
-from django.contrib.auth.views import (
-    PasswordResetCompleteView,
-    PasswordResetConfirmView,
-    PasswordResetDoneView,
-    PasswordResetView,
-)
+from django.contrib.auth.forms import SetPasswordForm
+from django.contrib.auth.tokens import default_token_generator
+from django.core.mail import send_mail
 from django.shortcuts import redirect, render
+from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes, force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django.views.decorators.http import require_GET, require_http_methods, require_POST
 
-from .forms import LoginForm, SignupForm
+from .forms import LoginForm, PasswordResetRequestForm, SignupForm
 from .models import User
 from .tokens import email_verification_token
 
 
+@require_http_methods(["GET", "POST"])
 def signup_view(request):
     if request.user.is_authenticated:
         return redirect(settings.LOGIN_REDIRECT_URL)
@@ -31,6 +31,7 @@ def signup_view(request):
     return render(request, "auth/signup.html", {"form": form})
 
 
+@require_http_methods(["GET", "POST"])
 def login_view(request):
     if request.user.is_authenticated:
         return redirect(settings.LOGIN_REDIRECT_URL)
@@ -45,11 +46,13 @@ def login_view(request):
     return render(request, "auth/login.html", {"form": form})
 
 
+@require_POST
 def logout_view(request):
     logout(request)
     return redirect(settings.LOGOUT_REDIRECT_URL)
 
 
+@require_GET
 def verify_email_view(request, uidb64, token):
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
@@ -66,23 +69,74 @@ def verify_email_view(request, uidb64, token):
     return redirect("auth:login")
 
 
-def _send_verification_email(request, user):
-    from django.core.mail import send_mail
-    from django.template.loader import render_to_string
+@require_http_methods(["GET", "POST"])
+def password_reset_view(request):
+    if request.method == "POST":
+        form = PasswordResetRequestForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data["email"]
+            try:
+                user = User.objects.get(email=email)
+            except User.DoesNotExist:
+                pass  # Don't reveal whether email exists
+            else:
+                _send_password_reset_email(request, user)
+            return redirect("auth:password-reset-done")
+    else:
+        form = PasswordResetRequestForm()
+    return render(request, "auth/password_reset.html", {"form": form})
 
+
+@require_GET
+def password_reset_done_view(request):
+    return render(request, "auth/password_reset_done.html")
+
+
+@require_http_methods(["GET", "POST"])
+def password_reset_confirm_view(request, uidb64, token):
+    try:
+        uid = force_str(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+
+    validlink = user is not None and default_token_generator.check_token(user, token)
+
+    if not validlink:
+        return render(request, "auth/password_reset_confirm.html", {"validlink": False})
+
+    if request.method == "POST":
+        form = SetPasswordForm(user, request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Password reset complete. You can now log in.")
+            return redirect("auth:password-reset-complete")
+    else:
+        form = SetPasswordForm(user)
+    return render(request, "auth/password_reset_confirm.html", {"form": form, "validlink": True})
+
+
+@require_GET
+def password_reset_complete_view(request):
+    return render(request, "auth/password_reset_complete.html")
+
+
+# --- Helpers ---
+
+
+def _send_verification_email(request, user):
     uid = urlsafe_base64_encode(force_bytes(user.pk))
     token = email_verification_token.make_token(user)
     protocol = "https" if request.is_secure() else "http"
     domain = request.get_host()
     verify_url = f"{protocol}://{domain}/auth/verify-email/{uid}/{token}/"
 
-    subject = "Verify your email"
     html_message = render_to_string(
         "emails/verify_email.html",
         {"user": user, "verify_url": verify_url, "site_name": "Nano"},
     )
     send_mail(
-        subject,
+        "Verify your email",
         f"Verify your email: {verify_url}",
         settings.DEFAULT_FROM_EMAIL,
         [user.email],
@@ -90,22 +144,21 @@ def _send_verification_email(request, user):
     )
 
 
-# Password reset views using Django's built-in CBVs
-class CustomPasswordResetView(PasswordResetView):
-    template_name = "auth/password_reset.html"
-    email_template_name = "emails/password_reset.txt"
-    html_email_template_name = "emails/password_reset.html"
-    success_url = "/auth/password-reset/done/"
+def _send_password_reset_email(request, user):
+    uid = urlsafe_base64_encode(force_bytes(user.pk))
+    token = default_token_generator.make_token(user)
+    protocol = "https" if request.is_secure() else "http"
+    domain = request.get_host()
+    reset_url = f"{protocol}://{domain}/auth/password-reset/{uid}/{token}/"
 
-
-class CustomPasswordResetDoneView(PasswordResetDoneView):
-    template_name = "auth/password_reset_done.html"
-
-
-class CustomPasswordResetConfirmView(PasswordResetConfirmView):
-    template_name = "auth/password_reset_confirm.html"
-    success_url = "/auth/password-reset/complete/"
-
-
-class CustomPasswordResetCompleteView(PasswordResetCompleteView):
-    template_name = "auth/password_reset_complete.html"
+    html_message = render_to_string(
+        "emails/password_reset.html",
+        {"user": user, "reset_url": reset_url, "site_name": "Nano"},
+    )
+    send_mail(
+        "Reset your password",
+        f"Reset your password: {reset_url}",
+        settings.DEFAULT_FROM_EMAIL,
+        [user.email],
+        html_message=html_message,
+    )
