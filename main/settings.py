@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # 1st party apps
     "apps.pages",
     "apps.users",
+    "apps.notes",
 ]
 
 DEV_MIDDLEWARE = [
