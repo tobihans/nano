@@ -15,10 +15,12 @@ class Environ(BaseSettings):
 
     language_code: str = "en-us"
 
-    email_host: str = ""
+    email_host: str = "localhost"
     email_host_user: str = ""
     email_host_password: str = ""
-    email_port: int = 25
+    email_port: int = 587
+    email_use_tls: bool = True
+    default_from_email: str = "noreply@example.com"
 
 
 env = Environ()

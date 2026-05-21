@@ -10,7 +10,7 @@ class MjmlNode(template.Node):
 
     def render(self, context):
         content = self.nodelist.render(context)
-        return mrml.to_html(content)
+        return mrml.to_html(content).content
 
 
 @register.tag("mjml")

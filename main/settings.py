@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     "django_extensions",
     *(DEV_TOOLS if DEBUG else []),
     # 1st party apps
+    "main",
     "apps.pages",
     "apps.users",
     "apps.notes",
@@ -168,4 +169,5 @@ EMAIL_HOST = env.email_host
 EMAIL_HOST_USER = env.email_host_user
 EMAIL_HOST_PASSWORD = env.email_host_password
 EMAIL_PORT = env.email_port
-DEFAULT_FROM_EMAIL = env.email_host_user
+EMAIL_USE_TLS = env.email_use_tls
+DEFAULT_FROM_EMAIL = env.default_from_email
