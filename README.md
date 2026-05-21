@@ -8,7 +8,7 @@
 
 ## Stack
 
-- **Backend**: Django 5.2, SQLite (WAL mode), pydantic-settings
+- **Backend**: Django 6, SQLite (WAL mode), pydantic-settings
 - **Frontend**: Tailwind CSS v4, basecoat-css, Alpine.js, esbuild
 - **Auth**: Custom email-based (signup w/ verification, login, logout, password reset)
 - **Emails**: MJML templates via mrml
