@@ -11,20 +11,6 @@ procs:
     stop:
       send-keys:
         - <C-c>
-
-  # mjml:
-  #   autostart: true
-  #   autorestart: false
-  #   cmd:
-  #     - npx
-  #     - mjml
-  #     - --watch
-  #     - ./templates/mjml/
-  #     - --output
-  #     - ./templates/email/
-  #   stop:
-  #     send-keys:
-  #       - <C-c>
   esbuild:
     autostart: true
     autorestart: false
