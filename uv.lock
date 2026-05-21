@@ -280,6 +280,38 @@ wheels = [
 ]
 
 [[package]]
+name = "mrml"
+version = "0.2.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/12/ee/305cfad90f41fff3b9823dc4c5fa8e553d611163256ba6a44627fb3628b0/mrml-0.2.0.tar.gz", hash = "sha256:97e8eb99d6e42821a020bdc76a7415fb714a2d8b8a8c5c22803dcd5a809f2edd", size = 134540, upload-time = "2025-03-01T20:04:26.404Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/28/48/79fbf90c49041ad3def10d1d17ff8bfef707b90efa319443aebd95a9097b/mrml-0.2.0-cp312-cp312-macosx_10_12_x86_64.whl", hash = "sha256:b24f3e3a0924387c5927aa3b4750b0b006dedf8df97a7911a6a1a971ae2c94d2", size = 1637684, upload-time = "2025-03-01T20:02:58.656Z" },
+    { url = "https://files.pythonhosted.org/packages/86/83/62a9c1c32cb50731e2c7248b33033981b374002e335c5791ace7dbeaf013/mrml-0.2.0-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:09a1cb67b8a9973226459d40d5ed61474aedc2d81222cb502bccb842a762e60f", size = 1556118, upload-time = "2025-03-01T20:03:01.984Z" },
+    { url = "https://files.pythonhosted.org/packages/33/3e/441cf23afd4f69cdbf8727b379f601a7a2971da34ec9534c1c75748c28ef/mrml-0.2.0-cp312-cp312-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:412db41d313f405f745468ea3474abef2f824e18e55dec1ee73453c924a8e1dc", size = 1595187, upload-time = "2025-03-01T20:03:03.235Z" },
+    { url = "https://files.pythonhosted.org/packages/10/1c/eaf5a5f06a510aae1eaf5ceac7dc1898a0007fed662eaa2f81fe250e103b/mrml-0.2.0-cp312-cp312-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:d98e108eef1277c699541cb102516b23b6078aae5bdb74b06cffaa0aebeda388", size = 1672649, upload-time = "2025-03-01T20:03:04.523Z" },
+    { url = "https://files.pythonhosted.org/packages/b8/60/66526cee75172a467e710e219a075896405342942f56cf9326a9835425cc/mrml-0.2.0-cp312-cp312-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:eca55a6b10a877559c2ca5ce71f83989a14696a000215b4fcba3fc81c55b8912", size = 1848705, upload-time = "2025-03-01T20:03:06.385Z" },
+    { url = "https://files.pythonhosted.org/packages/4f/52/363492a95d19a23c1f2af252c3de262f590820bd1f1a4d85939c9367f83b/mrml-0.2.0-cp312-cp312-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:eb375c91d15fe223cffa38831e7be01843977fb2cb91ea9d66ffd671077f08f1", size = 1849375, upload-time = "2025-03-01T20:03:07.541Z" },
+    { url = "https://files.pythonhosted.org/packages/db/8a/3a82d5feeea68ef2e767cfbce9eda8294e7821f6b23e735342ca56cdccd8/mrml-0.2.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:c5e6bfac107a9e7e4142a18fccfb5475e13504a0b317a90659c685952120f204", size = 1774365, upload-time = "2025-03-01T20:03:08.737Z" },
+    { url = "https://files.pythonhosted.org/packages/0e/c4/0e99c6ea87432ca425cca5a6eb585d9119b11eed4a7e8395b98e7ce6225f/mrml-0.2.0-cp312-cp312-manylinux_2_28_aarch64.whl", hash = "sha256:c14756543e2fb59c04b804211d5438eac79e19290ee56552ded936b29119c8ec", size = 1709493, upload-time = "2025-03-01T20:03:09.986Z" },
+    { url = "https://files.pythonhosted.org/packages/a3/5c/9a621e1f48d2be6fbac8d871646103d2c35611a93971dd9942a731ad1e0d/mrml-0.2.0-cp312-cp312-win32.whl", hash = "sha256:a4707afeb41804a1a7a5c3891b795b2debc4ee3c3b3133c4841ccc8a5f65f25a", size = 1137237, upload-time = "2025-03-01T20:03:11.43Z" },
+    { url = "https://files.pythonhosted.org/packages/37/98/7100b15861b47a0e2a0550bcba887abf0c955d4957925756de6472880fc7/mrml-0.2.0-cp312-cp312-win_amd64.whl", hash = "sha256:4cc5c733fa37b5adb9d7793a1b4d415e8222ae9c8f40454c32febae791c7bd65", size = 1418495, upload-time = "2025-03-01T20:03:15.905Z" },
+    { url = "https://files.pythonhosted.org/packages/07/45/2a016c3d0142f204fb98716d7500b106fd44ee8b9949e1df0d43e6e7c92b/mrml-0.2.0-cp313-cp313-macosx_10_12_x86_64.whl", hash = "sha256:d1a5a55aed7425c59e5b77024ea3876c71a6ea62792cf4ce38eb04100fbb0a61", size = 1637385, upload-time = "2025-03-01T20:03:17.723Z" },
+    { url = "https://files.pythonhosted.org/packages/ca/bf/d16394dd8d33a087501a6e9d5c8da3760d1e743c1a321bf713299d90a687/mrml-0.2.0-cp313-cp313-macosx_11_0_arm64.whl", hash = "sha256:d6f09ca2076b4d1080fdf0cd1a3a2ad85faa88f64690cef13d696c3bc30d5a5b", size = 1555477, upload-time = "2025-03-01T20:03:18.841Z" },
+    { url = "https://files.pythonhosted.org/packages/c5/8f/5d8b9cd7c3041072fc58e348bcf7342bb6e742b96a4ca6004624b1d0a9ac/mrml-0.2.0-cp313-cp313-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:986b71ab1c0ff78aef6d7aaac967418083146a6003de5ca5f7275f5ded190b09", size = 1594092, upload-time = "2025-03-01T20:03:20.221Z" },
+    { url = "https://files.pythonhosted.org/packages/80/72/f11ef94939b6b161a98725864a7bca196d985eeaf455d64b77534e55bcc7/mrml-0.2.0-cp313-cp313-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:219a840471e87e4d3d5db5b9c9ff65a96410643f02994fa46b15a308c8001f54", size = 1671767, upload-time = "2025-03-01T20:03:21.521Z" },
+    { url = "https://files.pythonhosted.org/packages/db/6f/8aef4cf03c4dae3b2c806137c56b6205274e2a9a76cf27096b3ce1c4245d/mrml-0.2.0-cp313-cp313-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:eba7ae5cbc4263fa3ba94230d6c66008c33890b5372385ed6ab8951bac336771", size = 1848048, upload-time = "2025-03-01T20:03:22.823Z" },
+    { url = "https://files.pythonhosted.org/packages/99/9e/a5129eae9bc25aaaf40299dd8b854716b6fc13e8e341484942bc39979efa/mrml-0.2.0-cp313-cp313-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:df66107b0dd7556b21cd3156876f2d5389d276b70cf29b8796141b0553a9615e", size = 1849732, upload-time = "2025-03-01T20:03:24.738Z" },
+    { url = "https://files.pythonhosted.org/packages/f4/dc/c7f1a41868fc94b8e016fb64c354e735d8b147edf15fcbe3be299b894a48/mrml-0.2.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:35233367f3ce503f87f47c04838ae8a298b5b08a212b1753e998279b09f1ab46", size = 1774084, upload-time = "2025-03-01T20:03:25.926Z" },
+    { url = "https://files.pythonhosted.org/packages/b9/ff/a122ba8445e2457971129306d56ca1d20cb1f64f64f59aa28b5fd1762db4/mrml-0.2.0-cp313-cp313-manylinux_2_28_aarch64.whl", hash = "sha256:0b0915d8ec0964333c123d462bfd68284a3d4715971d978426e282e11d08ebb4", size = 1709154, upload-time = "2025-03-01T20:03:27.789Z" },
+    { url = "https://files.pythonhosted.org/packages/08/94/cf0e072ff85bb5293fcb3465c20f36f86a74421b4cae4c43427acd7ba914/mrml-0.2.0-cp313-cp313-win32.whl", hash = "sha256:302cbbc0846fc158d2ec6b3e7c59dad6f5a9adcd3bd9d26b2dd148d39a274711", size = 1136900, upload-time = "2025-03-01T20:03:29.518Z" },
+    { url = "https://files.pythonhosted.org/packages/c4/b7/19b0cfdf67ec068a66870536bc489927ec25b84841cb075be3eca4acf758/mrml-0.2.0-cp313-cp313-win_amd64.whl", hash = "sha256:29d95f366dd2a55d152965ec90035b5c4a89d2f9028bd4bb2342e2f3585363e9", size = 1417896, upload-time = "2025-03-01T20:03:30.638Z" },
+    { url = "https://files.pythonhosted.org/packages/c8/a8/5263b68198e5a3a8f141281a0702aa5be750b7dd698a20c51414bc04981c/mrml-0.2.0-cp313-cp313t-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:13159e3aa30696ac64af5176a1a75020a7097fe2338e126d2ddc734f73549a10", size = 1593220, upload-time = "2025-03-01T20:03:31.836Z" },
+    { url = "https://files.pythonhosted.org/packages/8e/4f/3fff2d1ee06e95531a572f0bc53ca844c845e741ae4d5b9f57ed7b2e4b17/mrml-0.2.0-cp313-cp313t-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:f1becb9f3e278027c3d99747e30f8e8915b9569b6756028f2e824fdf35745e37", size = 1848613, upload-time = "2025-03-01T20:03:33.806Z" },
+    { url = "https://files.pythonhosted.org/packages/ba/6f/dc2a5504979a6a75fcf2bfa7e1b26e947005554f15ba5ad2c8866d1e71ce/mrml-0.2.0-cp313-cp313t-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:e7e3755fbc661115e3d7f1614230ac1c0bb9e8fdb4213d36aa1ad057f8fcf18c", size = 1852970, upload-time = "2025-03-01T20:03:35.141Z" },
+    { url = "https://files.pythonhosted.org/packages/da/b0/b9934140e42e6f4a1c139475656bc446150b7f82ff8a56f38626599e1117/mrml-0.2.0-cp313-cp313t-manylinux_2_28_aarch64.whl", hash = "sha256:55a82f3ed95d6b402e39446762f7bbeeb2a68084b82a10abe2923f0abe73259b", size = 1709350, upload-time = "2025-03-01T20:03:37.136Z" },
+]
+
+[[package]]
 name = "nano"
 version = "0.1.0"
 source = { virtual = "." }
@@ -290,6 +322,7 @@ dependencies = [
     { name = "django-crispy-forms" },
     { name = "django-debug-toolbar" },
     { name = "django-extensions" },
+    { name = "mrml" },
     { name = "pydantic-settings" },
 ]
 
@@ -308,6 +341,7 @@ requires-dist = [
     { name = "django-crispy-forms", specifier = ">=2.4" },
     { name = "django-debug-toolbar", specifier = ">=6.0.0" },
     { name = "django-extensions", specifier = ">=4.1" },
+    { name = "mrml", specifier = ">=0.2.0" },
     { name = "pydantic-settings", specifier = ">=2.10.1" },
 ]
 

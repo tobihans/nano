@@ -12,6 +12,7 @@ dependencies = [
   "django-crispy-forms>=2.4",
   "django-debug-toolbar>=6.0.0",
   "django-extensions>=4.1",
+  "mrml>=0.2.0",
   "pydantic-settings>=2.10.1",
 ]
 [dependency-groups]

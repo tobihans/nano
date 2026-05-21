@@ -362,3 +362,5 @@ vite.config.ts.timestamp-*
 mailpit
 db.sqlite3-shm
 db.sqlite3-wal
+
+**/*/.DS_Store

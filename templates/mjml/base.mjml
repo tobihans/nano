@@ -1,0 +1,52 @@
+<mjml>
+  <mj-head>
+    <mj-title>{{ subject }}</mj-title>
+    <mj-preview>{{ preview_text }}</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="Arial, sans-serif" />
+      <mj-text font-size="14px" color="#333333" line-height="1.6" />
+      <mj-button background-color="#3b82f6" color="#ffffff" font-size="14px" border-radius="6px" />
+    </mj-attributes>
+    <mj-style>
+      .footer-link { color: #6b7280; text-decoration: none; }
+      .footer-link:hover { text-decoration: underline; }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#f3f4f6">
+    <!-- Header -->
+    <mj-section background-color="#ffffff" padding="20px 0">
+      <mj-column>
+        <mj-text align="center" font-size="24px" font-weight="bold" color="#111827">
+          {{ site_name }}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <!-- Main Content -->
+    <mj-section background-color="#ffffff" padding="30px 20px">
+      <mj-column>
+        <mj-text font-size="16px">
+          Hello{% if user_display %} {{ user_display }}{% endif %},
+        </mj-text>
+        <mj-text>
+          {{ content }}
+        </mj-text>
+        <!-- Button placeholder - include in child templates -->
+        {{ button_block }}
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section background-color="#f9fafb" padding="20px">
+      <mj-column>
+        <mj-text align="center" font-size="12px" color="#6b7280">
+          Thank you for using {{ site_name }}!
+        </mj-text>
+        <mj-text align="center" font-size="12px" color="#9ca3af">
+          {{ site_domain }}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
