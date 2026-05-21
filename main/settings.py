@@ -167,3 +167,4 @@ EMAIL_HOST = env.email_host
 EMAIL_HOST_USER = env.email_host_user
 EMAIL_HOST_PASSWORD = env.email_host_password
 EMAIL_PORT = env.email_port
+DEFAULT_FROM_EMAIL = env.email_host_user

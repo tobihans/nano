@@ -1,0 +1,14 @@
+{% for field in form %}
+<div class="mb-4">
+  <label for="{{ field.id_for_label }}" class="block text-sm font-medium mb-1">{{ field.label }}</label>
+  {{ field }}
+  {% if field.errors %}
+    {% for error in field.errors %}
+      <p class="text-sm text-destructive mt-1">{{ error }}</p>
+    {% endfor %}
+  {% endif %}
+  {% if field.help_text %}
+    <p class="text-sm text-muted-foreground mt-1">{{ field.help_text }}</p>
+  {% endif %}
+</div>
+{% endfor %}
