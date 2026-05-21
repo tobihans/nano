@@ -1,14 +1,29 @@
 {% for field in form %}
-<div class="mb-4">
-  <label for="{{ field.id_for_label }}" class="block text-sm font-medium mb-1">{{ field.label }}</label>
-  {{ field }}
-  {% if field.errors %}
-    {% for error in field.errors %}
-      <p class="text-sm text-destructive mt-1">{{ error }}</p>
-    {% endfor %}
-  {% endif %}
-  {% if field.help_text %}
-    <p class="text-sm text-muted-foreground mt-1">{{ field.help_text }}</p>
-  {% endif %}
-</div>
+  <div class="space-y-1">
+    <div class="flex items-center gap-1">
+      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+      {% if field.help_text %}
+        <div class="popover inline-flex">
+          <button type="button"
+                  id="help-{{ field.id_for_label }}-trigger"
+                  aria-expanded="false"
+                  aria-controls="help-{{ field.id_for_label }}-popover"
+                  class="inline-flex cursor-help">
+            <span class="icon-[tabler--help-circle-filled] size-4 text-muted-foreground"></span>
+          </button>
+          <div id="help-{{ field.id_for_label }}-popover"
+               data-popover
+               data-side="right"
+               aria-hidden="true"
+               class="max-w-64 text-sm [&_ul]:list-disc [&_ul]:pl-4 [&_ul]:space-y-0.5">
+            {{ field.help_text|safe }}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    {{ field }}
+    {% if field.errors %}
+      {% for error in field.errors %}<p class="text-sm text-destructive">{{ error }}</p>{% endfor %}
+    {% endif %}
+  </div>
 {% endfor %}
