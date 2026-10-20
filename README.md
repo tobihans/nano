@@ -26,5 +26,6 @@ mprocs
 
 ## TODO
 
+- [ ] Replace the custom component set with [labb](https://labb.io/docs/guide/)
 - [ ] Make notes demo behave like SPA with alpine-ajax
 - [ ] Custom `collectstatic` management command that runs esbuild and compiles Tailwind before collecting
